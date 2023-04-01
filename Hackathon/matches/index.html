@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Matches</title>
+
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module">
+        import { getUser } from "../code.js";
+
+        window.again = async () => {
+            const t = new FormData(window.form1)
+            let location = t.get("location")
+            let need = t.get("need")
+            let excess = t.get("excess")
+            const user = await getUser(location, need, excess);
+            console.log("GOT USER", user)
+            const holder = document.getElementById("holder");
+            const d = document.createElement("p")
+            d.innerText = user.name
+            holder.append(d);
+        }
+
+    </script>
+
+
+</head>
+
+<body>
+  <div class="main">
+    <div class="nav-links">
+        <ul>
+            <li><a href="./main">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Matches</a></li>
+        </ul>
+    </div>
+  <div class="form">
+    <h1>Information</h1>
+    <form name="form1" id="form1" action = "">
+        <div class="location">
+           <select name="location" id="selectLocation" >
+                <option value="Fayetteville" selected="selected">Fayetteville</option>
+                <option value="Bentonville" selected="selected">Bentonville</option>
+                <option value="Rogers" selected="selected">Rogers</option>
+                <option value="Little Rock" selected="selected">Little Rock</option>
+                <option value="" selected="selected">Location</option>
+            </select>
+        </div>
+            <br><br>
+        <div class="excess">
+            <select name="excess" id="selectExcess">
+            <option value="Eggs" selected="selected">Eggs</option>
+            <option value="Fruits" selected="selected">Fruits</option>
+            <option value="Vegetables" selected="selected">Vegetables</option>
+            <option value="Honey" selected="selected">Honey</option>
+            <option value="" selected="selected">Excess Produce</option>
+            </select>
+        </div>
+            <br><br>
+        <div class="need">
+            <select name="need" id="selectNeed">
+            <option value="Eggs" selected="selected">Eggs</option>
+            <option value="Fruits" selected="selected">Fruits</option>
+            <option value="Vegetables" selected="selected">Vegetables</option>
+            <option value="Honey" selected="selected">Honey</option>
+            <option value="" selected="selected">Needed Produce</option>
+            </select>
+        </div>
+            <br><br>
+            
+        </div>
+        <div id="holder">
+        </div>
+    </form>
+    <button onclick="again()">Submit</button>
+   </div>
+   </div>
+</body>
+
+</html>
