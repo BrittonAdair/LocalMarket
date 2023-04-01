@@ -20,7 +20,11 @@
             let excess = t.get("excess")
             const user = await getUser(location, need, excess);
             const holder = document.getElementById("holder");
-            
+            if (user.length == 0) {
+                const d = document.createElement("p")
+                d.innerText = "Sorry! No producers near you were found."
+                holder.append(d);
+            }
             for (let i = 0; i < user.length; i++) {
                 const d = document.createElement("p")
                 d.innerText = "\nName: " + user[i].name + "\nEmail: " + user[i].Email + "\nLocation: " + user[i].location + "\nNeeded Produce: " + user[i].Need + "\nExcess Produce: " + user[i].Excess +"\n"; 
