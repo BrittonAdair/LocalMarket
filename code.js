@@ -39,7 +39,7 @@ querySnapshot.forEach((doc) => {
     }
 });
 querySnapshot.forEach((doc) => {
-    if (doc.data().location == targetJson[0].location) {
+    if ((doc.data().location == targetJson[0].location) && (doc.data().Excess == targetJson[0].Need)) {
         console.log(doc.data());
     }
 });
