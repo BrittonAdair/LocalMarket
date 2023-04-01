@@ -26,7 +26,7 @@ const db = getFirestore(app);
 
 export async function getUser(location, need, excess) {
     /*querySnapshot.forEach((doc) => {
-        if (doc.data().name == "Britton") {
+        if (doc.data().name == "Brittowefn") {
             console.log(doc.data());
             targetJson.push(doc.data())
         }
