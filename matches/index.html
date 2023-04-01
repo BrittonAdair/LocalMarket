@@ -28,6 +28,7 @@
             for (let i = 0; i < user.length; i++) {
                 const d = document.createElement("p")
                 d.innerText = "\nName: " + user[i].name + "\nEmail: " + user[i].Email + "\nLocation: " + user[i].location + "\nNeeded Produce: " + user[i].Need + "\nExcess Produce: " + user[i].Excess +"\n"; 
+                d.style.textAlign = "center"
                 holder.append(d);
             }
             

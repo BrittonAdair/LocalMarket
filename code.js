@@ -22,8 +22,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
-
-
+/*
+export async function createUser() {
+    try {
+        const docRef = await addDoc(collection(db, "users"), {
+          name: 
+          location: 
+          Email:
+          Excess:
+          Need:
+        });
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+}*/
 export async function getUser(location, need, excess) {
     /*querySnapshot.forEach((doc) => {
         if (doc.data().name == "Britton") {
