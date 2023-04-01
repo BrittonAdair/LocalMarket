@@ -85,14 +85,13 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.btn{
-  background-color:  rgba(255,255,255,0.7);
-  border: 1px solid black;
-  border-radius: 6px;
-  color: black;
-  padding: 16px 32px;
+.button{
+  background-color: rgba(255,255,255,0.7); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
   text-decoration: none;
-  margin: 0px 36px;
-  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
 }
