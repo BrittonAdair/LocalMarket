@@ -32,11 +32,10 @@ export async function getUser(location, need, excess) {
         }
     });*/
     const querySnapshot = await getDocs(collection(db, "users"));
-    let user;
+    let user = [];
     querySnapshot.forEach((doc) => {
         if ((doc.data().location == location) && (doc.data().Excess == need) && (doc.data().Need == excess)) {
-            user = doc.data();
-            return;
+            user.push(doc.data());
         }
     });
     return user

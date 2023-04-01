@@ -19,11 +19,15 @@
             let need = t.get("need")
             let excess = t.get("excess")
             const user = await getUser(location, need, excess);
-            console.log("GOT USER", user)
             const holder = document.getElementById("holder");
-            const d = document.createElement("p")
-            d.innerText = user.name
-            holder.append(d);
+            
+            for (let i = 0; i < user.length; i++) {
+                const d = document.createElement("p")
+                d.innerText = "\nName: " + user[i].name + "\nEmail: " + user[i].Email + "\nLocation: " + user[i].location + "\nNeeded Produce: " + user[i].Need + "\nExcess Produce: " + user[i].Excess +"\n"; 
+                holder.append(d);
+            }
+            
+            
         }
 
     </script>
