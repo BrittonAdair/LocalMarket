@@ -25,35 +25,39 @@
 
 </head>
 
-    <body>
-  <div class="intakeform">
+<body>
+  <div class="main">
+  <div class="form">
     <div class="overlay"></div>
     <h1>Information</h1>
     <form name="form1" id="form1" action="/action_page.php">
-        <div class="location" style="width:200px;">
-            Locations: <select name="location" id="location">
+        <div class="location">
+           <select name="location" id="selectLocation">
                 <option value="0" selected="selected">Fayetteville</option>
                 <option value="1" selected="selected">Bentonville</option>
                 <option value="2" selected="selected">Rogers</option>
                 <option value="3" selected="selected">Little Rock</option>
+                <option value="" selected="selected">Location</option>
             </select>
         </div>
             <br><br>
         <div class="excess">
-            Excess: <select name="Excess" id="Excess">
+            <select name="excess" id="selectExcess">
             <option value="0" selected="selected">Eggs</option>
             <option value="1" selected="selected">Fruits</option>
             <option value="2" selected="selected">Vegetables</option>
             <option value="3" selected="selected">Honey</option>
+            <option value="" selected="selected">Excess Produce</option>
             </select>
         </div>
             <br><br>
         <div class="need">
-            Needs: <select name="need" id="need">
+            <select name="need" id="selectNeed">
             <option value="0" selected="selected">Eggs</option>
             <option value="1" selected="selected">Fruits</option>
             <option value="2" selected="selected">Vegetables</option>
             <option value="3" selected="selected">Honey</option>
+            <option value="" selected="selected">Needed Produce</option>
             </select>
         </div>
             <br><br>
@@ -62,7 +66,7 @@
     </form>
         <button onclick"tyler()">TEST</button>
    </div>
-
+   </div>
 </body>
 
 </html>
