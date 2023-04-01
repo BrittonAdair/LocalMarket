@@ -9,9 +9,28 @@
         <!-- Load external CSS styles -->
         <link rel="stylesheet" href="styles.css">
 
+
     </head>
 
     <body>
-        <h1>d</h1>
+  <div class="intakeform">
+    <form name="form1" id="form1" action="/action_page.php">
+        Locations: <select name="location" id="location">
+            <option value="" selected="selected">Select location</option>
+            <option value="1" selected="selected">Selectasdfsadf location</option>
+        </select>
+        <br><br>
+        Excess: <select name="Excess" id="Excess">
+        <option value="" selected="selected">Please select location first</option>
+        </select>
+        <br><br>
+        Needs: <select name="need" id="need">
+        <option value="" selected="selected">Please select Excess first</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+   </div>
+
     </body>
 </html>
