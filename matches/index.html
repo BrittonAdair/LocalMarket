@@ -1,36 +1,51 @@
 <!doctype html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
 
-        <title>Matches</title>
+<head>
+    <meta charset="utf-8">
 
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
+    <title>Matches</title>
+
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module">
+        import { test } from "../code.js";
+
+        window.tyler = () => {
+            const t = new FormData(window.form1)
+            
+            for (let entry of t) {
+                console.log(entry);
+            }
+        }
+    </script>
 
 
-    </head>
+</head>
 
-    <body>
-  <div class="intakeform">
-    <form name="form1" id="form1" action="/action_page.php">
-        Locations: <select name="location" id="location">
-            <option value="" selected="selected">Select location</option>
-            <option value="1" selected="selected">Selectasdfsadf location</option>
-        </select>
-        <br><br>
-        Excess: <select name="Excess" id="Excess">
-        <option value="" selected="selected">Please select location first</option>
-        </select>
-        <br><br>
-        Needs: <select name="need" id="need">
-        <option value="" selected="selected">Please select Excess first</option>
-        </select>
-        <br><br>
-        <input type="submit" value="Submit">
-    </form>
-   </div>
+<body>
+    <div class="intakeform">
+        <form name="form1" id="form1">
+            Locations: <select name="location" id="location">
+                <option value="2" selected="selected">Select location</option>
+                <option value="1" selected="selected">Selectasdfsadf location</option>
+            </select>
+            <br><br>
+            Excess: <select name="Excess" id="Excess">
+                <option value="pig" selected="selected">Please select location first</option>
+            </select>
+            <br><br>
+            Needs: <select name="need" id="need">
+                <option value="" selected="selected">Please select Excess first</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+        <button onclick="tyler()"> TEST </button>
+    </div>
 
-    </body>
+</body>
+
 </html>
