@@ -11,15 +11,21 @@
     <link rel="stylesheet" href="styles.css">
 
     <script type="module">
-        import { test } from "../code.js";
+        import { getUser } from "../code.js";
 
-        window.tyler = () => {
+        window.again = async () => {
             const t = new FormData(window.form1)
-
-            for (let entry of t) {
-                console.log(entry);
-            }
+            let location = t.get("location")
+            let need = t.get("need")
+            let excess = t.get("excess")
+            const user = await getUser(location, need, excess);
+            console.log("GOT USER", user)
+            const holder = document.getElementById("holder");
+            const d = document.createElement("p")
+            d.innerText = user.name
+            holder.append(d);
         }
+
     </script>
 
 
@@ -30,41 +36,43 @@
   <div class="form">
     <div class="overlay"></div>
     <h1>Information</h1>
-    <form name="form1" id="form1" action="/action_page.php">
+    <form name="form1" id="form1" action = "">
         <div class="location">
-           <select name="location" id="selectLocation">
-                <option value="0" selected="selected">Fayetteville</option>
-                <option value="1" selected="selected">Bentonville</option>
-                <option value="2" selected="selected">Rogers</option>
-                <option value="3" selected="selected">Little Rock</option>
+           <select name="location" id="selectLocation" >
+                <option value="Fayetteville" selected="selected">Fayetteville</option>
+                <option value="Bentonville" selected="selected">Bentonville</option>
+                <option value="Rogers" selected="selected">Rogers</option>
+                <option value="Little Rock" selected="selected">Little Rock</option>
                 <option value="" selected="selected">Location</option>
             </select>
         </div>
             <br><br>
         <div class="excess">
             <select name="excess" id="selectExcess">
-            <option value="0" selected="selected">Eggs</option>
-            <option value="1" selected="selected">Fruits</option>
-            <option value="2" selected="selected">Vegetables</option>
-            <option value="3" selected="selected">Honey</option>
+            <option value="Eggs" selected="selected">Eggs</option>
+            <option value="Fruits" selected="selected">Fruits</option>
+            <option value="Vegetables" selected="selected">Vegetables</option>
+            <option value="Honey" selected="selected">Honey</option>
             <option value="" selected="selected">Excess Produce</option>
             </select>
         </div>
             <br><br>
         <div class="need">
             <select name="need" id="selectNeed">
-            <option value="0" selected="selected">Eggs</option>
-            <option value="1" selected="selected">Fruits</option>
-            <option value="2" selected="selected">Vegetables</option>
-            <option value="3" selected="selected">Honey</option>
+            <option value="Eggs" selected="selected">Eggs</option>
+            <option value="Fruits" selected="selected">Fruits</option>
+            <option value="Vegetables" selected="selected">Vegetables</option>
+            <option value="Honey" selected="selected">Honey</option>
             <option value="" selected="selected">Needed Produce</option>
             </select>
         </div>
             <br><br>
-            <input type="submit" value="Submit">
+            
+        </div>
+        <div id="holder">
         </div>
     </form>
-        <button onclick"tyler()">TEST</button>
+    <button onclick="again()">Submit</button>
    </div>
    </div>
 </body>

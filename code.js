@@ -20,39 +20,29 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-var bigOne = document.getElementById('bigOne');
 
 const db = getFirestore(app);
 
-console.log("Here")
 
-const querySnapshot = await getDocs(collection(db, "users"));
-let targetJson = []
-
-console.log("There")
-querySnapshot.forEach((doc) => {
-    if (doc.data().name == "Britton") {
-        console.log(doc.data());
-        targetJson.push(doc.data())
-    }
-});
-querySnapshot.forEach((doc) => {
-    if ((doc.data().location == targetJson[0].location) && (doc.data().Excess == targetJson[0].Need)) {
-        console.log(doc.data());
-    }
-});
-export async function test() {
-    try {
-        const docRef = await addDoc(collection(db, "users"), {
-          first: "Ada",
-          last: "Lovelace",
-          born: 1815
-        });
-        console.log("Document written with ID: ", docRef.id);
-      } catch (e) {
-        console.error("Error adding document: ", e);
-      }
+export async function getUser(location, need, excess) {
+    /*querySnapshot.forEach((doc) => {
+        if (doc.data().name == "Britton") {
+            console.log(doc.data());
+            targetJson.push(doc.data())
+        }
+    });*/
+    const querySnapshot = await getDocs(collection(db, "users"));
+    let user;
+    querySnapshot.forEach((doc) => {
+        if ((doc.data().location == location) && (doc.data().Excess == need) && (doc.data().Need == excess)) {
+            user = doc.data();
+            return;
+        }
+    });
+    return user
 }
+
+
+
+
 
