@@ -24,7 +24,7 @@ nav{
     flex-basis: 20%
 }
 .logo img{
-    width: 300px;
+    width: 500px;
 }
 .nav-links{
     flex: 1;
@@ -110,11 +110,11 @@ nav{
     color: #ffffff;
 }
 #upBtn{
-    width: 15px;
+    width: 25px;
     cursor: pointer;
 }
 #downBtn{
-    width: 15px;
+    width: 25px;
     cursor: pointer;
     transform: rotate(180deg);
 }
