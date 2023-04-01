@@ -6,17 +6,12 @@
 }
   
 body {
-   background: #cbd2cb;
+   background: white;
 }
 .intakeform{
     position: absolute;
     top: 37%;
     left: 25%;
-}
-:root{
-  --select-border: #777;
-  --select-focus: blue;
-  --select-arrow: var(--select-border);
 }
 .location{
   width: 100%;
@@ -66,5 +61,8 @@ body {
   grid-template-areas: "location";
   align-items: center;
 }
-
-
+.intakeform h1{
+  color: #10bb10;
+  justify-content: center;
+  align-items: center;
+}

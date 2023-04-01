@@ -1,19 +1,34 @@
 <!doctype html>
 
 <html>
-    <head>
-        <meta charset="utf-8">
 
-        <title>Matches</title>
+<head>
+    <meta charset="utf-8">
 
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
+    <title>Matches</title>
+
+    <!-- Load external CSS styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module">
+        import { test } from "../code.js";
+
+        window.tyler = () => {
+            const t = new FormData(window.form1)
+            
+            for (let entry of t) {
+                console.log(entry);
+            }
+        }
+    </script>
 
 
-    </head>
+</head>
 
     <body>
   <div class="intakeform">
+    <div class="overlay"></div>
+    <h1>Information</h1>
     <form name="form1" id="form1" action="/action_page.php">
         <div class="location" style="width:200px;">
             Locations: <select name="location" id="location">
@@ -42,11 +57,12 @@
             </select>
         </div>
             <br><br>
-        <div class="submitBtn">
             <input type="submit" value="Submit">
         </div>
     </form>
+        <button onclick"tyler()">TEST</button>
    </div>
 
-    </body>
+</body>
+
 </html>
