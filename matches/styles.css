@@ -11,6 +11,7 @@ body {
 .nav-links{
   position: absolute;
   top: 8%;
+  left: 39%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,73 +26,79 @@ body {
   color: white;
   text-decoration: none;
 }
-.location{
-  width: 200px;
-}
 #selectLocation{
-  width: 100%;
+  position: absolute;
+  left: 30%;
+  top: 45%;
+  width: 200px;
   padding:  15px 20px;
   margin-bottom: 8px;
   margin-top: 20px;
   box-sizing: border-box;
   background: rgba(255,255,255,0.7);
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
-}
-.excess{
-  width: 200px;
 }
 #selectExcess{
-  width: 100%;
+  position: absolute;
+  left: 30%;
+  top: 39%;
+  width: 200px;
   padding:  15px 20px;
   margin-bottom: 10px;
   box-sizing: border-box;
   background: rgba(255,255,255,0.7);
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
 }
-.need{
- width: 200px;
-}
 #selectNeed{
-  width: 100%;
+  position: absolute;
+  left: 30%;
+  top: 31%;
+  width: 200px;
   padding:  15px 20px;
   margin-bottom: 10px;
   box-sizing: border-box;
   background: rgba(255,255,255,0.7);
   border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   cursor: pointer;
 }
 .form h1{
+  position: absolute;
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 26%;
+  left: 30.5%;
+}
+.main h1{
+  position: absolute;
+  color: white;
+  top: 26%;
+  right: 30.5%;
 }
 .main{
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(#10bb10, #a0f088);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
-.button{
+.btn{
+  position: absolute;
+  left: 31.5%;
+  bottom: 40%;
   background-color: rgba(255,255,255,0.7);
-  border: none;
-  color: white;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border-width: 1px;
+  color: black;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
+}
+#holder{
+  position: absolute;
+  color: white;
+  top: 31%;
+  right: 26%;
 }
