@@ -6,10 +6,13 @@
   }
   
   body {
-    background: #e3f2fd;
+    background: #a0f088;
   }
   .intakeform{
     position: absolute;
-    top: 40%;
+    top: 37%;
     left: 25%;
+  }
+  .submit{
+    background: white;
   }
