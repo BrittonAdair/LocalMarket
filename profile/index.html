@@ -9,11 +9,33 @@
         <!-- Load external CSS styles -->
         <link rel="stylesheet" href="styles.css">
         <script type="module"> 
-            import {test} from "./code.js";
-            window.fish = test
+            import { createUser } from "../code.js";
+            window.getData = async () => {
+                let name = document.getElementById('Name').value
+                let email = document.getElementById('Email').value
+                let location = document.getElementById('Location').value
+                let excess = document.getElementById('Excess').value
+                let need = document.getElementById('Need').value
+                createUser(name, email, location, excess, need)
+            }
         </script>
 
     </head>
-    <body></body>
+    <body>
+        <label for="Name">Name:</label>
+        <input type="text" id="Name" name="Name" placeholder="Jane Doe">
+        <label for="Name">Email:</label>
+        <input type="text" id="Email" name="Email" placeholder="enteremailhere@gmail.com">
+        <label for="Name">Location:</label>
+        <input type="text" id="Location" name="Location" placeholder="Fayetteville">
+        <label for="Name">Excess Produce:</label>
+        <input type="text" id="Excess" name="Excess" placeholder="(Eggs/Fruits/Vegetables/Honey)">
+        <label for="Name">Produce needs:</label>
+        <input type="text" id="Need" name="Need" placeholder="(Eggs/Fruits/Vegetables/Honey)">
+        <br><br>    
+        <button type="button" onclick="getData()"> Submit </button>
+
+            
+    </body>
 
 </html>
